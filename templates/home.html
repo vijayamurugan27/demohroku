@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Hai , satheesh babu.</h1>
+
+{% for prod in product %}
+Roll.No:{{ prod.id }}<br>
+Product Name:{{ prod.name }}<br>
+Price:{{ prod.price }}<br>
+Description:{{ prod.description }}<br>
+Contact Number:{{ prod.contact_number }}<br>
+
+<a type="button" class="btn btn-primary" href="{% url 'detail_product' prod.id %}">Detail</a>
+<a type="button" class="btn btn-success" href="{% url 'update_product' prod.id %}">Update</a>
+<a type="button" class="btn btn-danger" href="{% url 'delete_product' prod.id %}">Delete</a>
+
+
+<br><hr>
+
+{% endfor %}
+
+{% endblock %}
+
